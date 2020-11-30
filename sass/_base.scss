@@ -37,6 +37,13 @@ Primary dark: #BA265D
   --line: 1px solid var(--grey-light-2);
 }
 
+// SCSS variables for media queries
+$bp-largest: 75em; // 1200px --> 1200/16 = 75
+$bp-large: 68em; //1100px
+$bp-medium: 56.25em; // 900px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 31.25em; // 56px
+
 * {
   margin: 0;
   padding: 0;
@@ -45,6 +52,10 @@ Primary dark: #BA265D
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 1rem = 10px, 10px/16px(brower default) = 62.2%
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%; // 8px --> 16 / 8
+  }
 }
 
 *::before {
